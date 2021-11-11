@@ -1,0 +1,7 @@
+class AddCommentAndRefsToBookmarks < ActiveRecord::Migration[6.0]
+  def change
+    add_column :bookmarks, :comment, :text
+    add_reference :bookmarks, :movie, foreign_key: true
+    add_reference :bookmarks, :list, foreign_key: true
+  end
+end
